@@ -30,4 +30,23 @@
         size_hint: 0.1, 0.08
         pos_hint: {'top': 1, 'right': 1}
         on_press: app.stop()
-        
+
+#second row:
+
+    Button:
+        background_normal: 'rps/stone.png'
+        size_hint: 0.2, 0.2
+        pos_hint: {'x': 0.1, 'top': 0.9}
+        on_press: root.rock()
+
+    Button:
+        background_normal: 'rps/paper.png'
+        size_hint: 0.2, 0.2
+        pos_hint: {'x': 0.4, 'top': 0.9}
+        on_press: root.paper()
+
+    Button:
+        background_normal: 'rps/scissors.png'
+        size_hint: 0.2, 0.2
+        pos_hint: {'x': 0.z, 'top': 0.9}
+        on_press: root.scissors()
