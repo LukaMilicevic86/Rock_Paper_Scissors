@@ -50,3 +50,27 @@
         size_hint: 0.2, 0.2
         pos_hint: {'x': 0.z, 'top': 0.9}
         on_press: root.scissors()
+
+#My and opponent points section:
+
+    Label:
+        text:'Your points'
+        size_hint: 0.2, 0.1
+        pos_hint: {'x': 0.1, 'top': 0.6}
+
+    Label:
+        text:'0'
+        id: label_your_points
+        size_hint: 0.2, 0.1
+        pos_hint: {'x': 0.1, 'top': 0.5}
+    
+    Label:
+        text:'Opponent points'
+        size_hint: 0.2, 0.1
+        pos_hint: {'x': 0.1, 'top': 0.3}
+    
+    Label:
+        text:'0'
+        id: label_opponent_points
+        size_hint: 0.2, 0.1
+        pos_hint: {'x': 0.1, 'top': 0.2}
