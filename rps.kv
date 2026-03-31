@@ -14,8 +14,8 @@
     size: root.width, root.height
 
     Label:
-        text:'Click on a pic'
         id: instructions
+        text:'Click on a pic'
         size_hint: 0.8, 0.1
         pos_hint: {'top': 1, 'right': 0.8}
 
@@ -48,7 +48,7 @@
     Button:
         background_normal: 'rps/scissors.png'
         size_hint: 0.2, 0.2
-        pos_hint: {'x': 0.z, 'top': 0.9}
+        pos_hint: {'x': 0.7, 'top': 0.9}
         on_press: root.scissors()
 
 #My and opponent points section:
@@ -59,8 +59,8 @@
         pos_hint: {'x': 0.1, 'top': 0.6}
 
     Label:
-        text:'0'
         id: label_your_points
+        text:'0'
         size_hint: 0.2, 0.1
         pos_hint: {'x': 0.1, 'top': 0.5}
     
@@ -70,7 +70,32 @@
         pos_hint: {'x': 0.1, 'top': 0.3}
     
     Label:
-        text:'0'
         id: label_opponent_points
+        text:'0'
         size_hint: 0.2, 0.1
         pos_hint: {'x': 0.1, 'top': 0.2}
+
+#Game counter and selection display elements
+
+    Label:
+        text:'Game'
+        size_hint: 0.2, 0.1
+        pos_hint: {'x': 0.4, 'top': 0.5}
+
+    Label:
+        id: game_number
+        text:'0'
+        size_hint: 0.2, 0.1
+        pos_hint: {'x': 0.6, 'top': 0.5}
+
+    Button:
+        id: your_selection
+        background_normal: 'rps/empty.png'
+        size_hint: 0.2, 0.2
+        pos_hint: {'x': 0.4, 'top': 0.9}
+
+    Button:
+        id: opponent_selection
+        background_normal: 'rps/empty.png'
+        size_hint: 0.2, 0.2
+        pos_hint: {'x': 0.7, 'top': 0.4}
