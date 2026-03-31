@@ -1,0 +1,33 @@
+#upper buttons template:
+<RoundedButton@Button>
+    background_color: (0, 0, 0, 0)
+    canvas.before:
+        Color:
+            rgba: (29/255, 100/255, 25/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]
+
+#upper part:
+<TheGame>
+    size: root.width, root.height
+
+    Label:
+        text:'Click on a pic'
+        id: instructions
+        size_hint: 0.8, 0.1
+        pos_hint: {'top': 1, 'right': 0.8}
+
+    RoundedButton:
+        text:'New'
+        size_hint: 0.1, 0.08
+        pos_hint: {'top': 1, 'right': 0.9}
+        on_press: root.restart()
+    
+    RoundedButton:
+        text:'Exit'
+        size_hint: 0.1, 0.08
+        pos_hint: {'top': 1, 'right': 1}
+        on_press: app.stop()
+        
