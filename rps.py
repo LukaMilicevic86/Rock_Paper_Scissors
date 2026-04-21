@@ -32,3 +32,25 @@ class TheGame(FloatLayout):
 
         #the oponent selection picture in the kivy file gets that image
         self.ids.opponent_selection.background_normal = self.path
+
+    #rock function that calls the random generator, calls the battle function and uses the stone picture as parameter
+    def rock(self):
+        self.random_selection()
+        self.ids.your_selection.background_normal = "rps\stone.png"
+        self.battle(self.ids.your_selection.background_normal, self.path)
+
+    #paper function that calls the random generator, calls the battle function and uses the paper picture as parameter
+    def paper(self):
+        self.random_selection()
+        self.ids.your_selection.background_normal = "rps\paper.png"
+        self.battle(self.ids.your_selection.background_normal, self.path)
+    
+    #scissors function that calls the random generator, calls the battle function and uses the scissors picture as parameter
+    def scissors(self):
+        self.random_selection()
+        self.ids.your_selection.background_normal = "rps\scussirs.png"
+        self.battle(self.ids.your_selection.background_normal, self.path)
+
+    #battle function that uses if statements with the pictures from the parameters to determine the outcome of the matchup
+    def battle(self, your_selection, opponent_selection):
+        ...
