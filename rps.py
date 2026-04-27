@@ -95,5 +95,21 @@ class TheGame(FloatLayout):
             self.ids.label_opponent_points.text = str(self.opponent_points)
             
 
+    #The class function that resets the scores and UI upon pressing the "New" button
+    def restart(self):
+        self.opponent_points = 0
+        self.your_points = 0
+        self.ids.instructions.text = ""
+        TheGame.game_counter = 0
+        self.ids.game_number.text = "0"
+        self.ids.label_opponent_points.text = "0"
+        self.ids.label_your_points.text = "0"
 
+
+#App class and instance
+class MyApp(App):
+    def build(self):
+        return TheGame()
+    
+MyApp().run()
 
