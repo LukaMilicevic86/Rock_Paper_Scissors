@@ -34,19 +34,19 @@ class TheGame(FloatLayout):
     #rock function that calls the random generator, calls the battle function and uses the stone picture as parameter
     def rock(self):
         self.random_selection()
-        self.ids.your_selection.background_normal = "rps\stone.png"
+        self.ids.your_selection.background_normal = "rps/stone.png"
         self.battle(self.ids.your_selection.background_normal, self.path)
 
     #paper function that calls the random generator, calls the battle function and uses the paper picture as parameter
     def paper(self):
         self.random_selection()
-        self.ids.your_selection.background_normal = "rps\paper.png"
+        self.ids.your_selection.background_normal = "rps/paper.png"
         self.battle(self.ids.your_selection.background_normal, self.path)
     
     #scissors function that calls the random generator, calls the battle function and uses the scissors picture as parameter
     def scissors(self):
         self.random_selection()
-        self.ids.your_selection.background_normal = "rps\scussirs.png"
+        self.ids.your_selection.background_normal = "rps/scissors.png"
         self.battle(self.ids.your_selection.background_normal, self.path)
 
     #battle function that uses if statements that compare the picture names from the arguments to determine the outcome, keep score and update the UI
