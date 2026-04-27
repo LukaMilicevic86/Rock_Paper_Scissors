@@ -11,14 +11,12 @@ import os
 Builder.load_file('rps.kv')
 
 #create class for the game window with all score variables set to zero at the beginning
-
 class TheGame(FloatLayout):
     game_counter = 0
     your_points = 0
     opponent_points = 0
 
-#function for random selection of opponent's picture that's to be called when we click on ours
-
+    #function for random selection of opponent's picture that's to be called when we click on ours
     def random_selection(self):
         number = random.randint(1,3)
 
@@ -51,6 +49,51 @@ class TheGame(FloatLayout):
         self.ids.your_selection.background_normal = "rps\scussirs.png"
         self.battle(self.ids.your_selection.background_normal, self.path)
 
-    #battle function that uses if statements with the pictures from the parameters to determine the outcome of the matchup
+    #battle function that uses if statements that compare the picture names from the arguments to determine the outcome, keep score and update the UI
     def battle(self, your_selection, opponent_selection):
-        ...
+    
+    #Outcomes when player's choice is Rock
+        if os.path.basename(your_selection) == "stone.png" and os.path.basename(opponent_selection) == "stone.png":
+            self.ids.instructions.text = "Draw"
+
+        if os.path.basename(your_selection) == "stone.png" and os.path.basename(opponent_selection) == "scissors.png":
+            self.ids.instructions.text = "You win"
+            self.your_points += 1
+            self.ids.label_your_points.text = str(self.your_points)
+
+        if os.path.basename(your_selection) == "stone.png" and os.path.basename(opponent_selection) == "paper.png":
+            self.ids.instructions.text = "You lose"
+            self.opponent_points += 1
+            self.ids.label_opponent_points.text = str(self.opponent_points)
+        
+    #Outcomes when player's choice is Paper
+        if os.path.basename(your_selection) == "paper.png" and os.path.basename(opponent_selection) == "paper.png":
+            self.ids.instructions.text = "Draw"
+
+        if os.path.basename(your_selection) == "paper.png" and os.path.basename(opponent_selection) == "stone.png":
+            self.ids.instructions.text = "You win"
+            self.your_points += 1
+            self.ids.label_your_points.text = str(self.your_points)
+
+        if os.path.basename(your_selection) == "paper.png" and os.path.basename(opponent_selection) == "scissors.png":
+            self.ids.instructions.text = "You lose"
+            self.opponent_points += 1
+            self.ids.label_opponent_points.text = str(self.opponent_points)
+
+    #Outcomes when player's choice is Scissors
+        if os.path.basename(your_selection) == "scissors.png" and os.path.basename(opponent_selection) == "scissors.png":
+            self.ids.instructions.text = "Draw"
+
+        if os.path.basename(your_selection) == "scissors.png" and os.path.basename(opponent_selection) == "paper.png":
+            self.ids.instructions.text = "You win"
+            self.your_points += 1
+            self.ids.label_your_points.text = str(self.your_points)
+
+        if os.path.basename(your_selection) == "scissors.png" and os.path.basename(opponent_selection) == "stone.png":
+            self.ids.instructions.text = "You lose"
+            self.opponent_points += 1
+            self.ids.label_opponent_points.text = str(self.opponent_points)
+            
+
+
+
